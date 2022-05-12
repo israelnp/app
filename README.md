@@ -8,4 +8,8 @@
 
 ### Executando Container
 
-* docker run --name app_python -h my_hostaname -p5000:5000 -d img_app_python
+* docker run --name app_python -h my_hostname -p5000:5000 -d img_app_python
+
+### Metricas de Aplicaçao 
+
+* /metrics

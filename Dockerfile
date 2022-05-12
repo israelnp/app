@@ -1,9 +1,14 @@
 FROM python:3
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY app /app
+COPY app  .
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-CMD [ "python3", "/app/app.py" ]
+COPY . .
+
+CMD [ "python3", "app.py" ]
+
+
+

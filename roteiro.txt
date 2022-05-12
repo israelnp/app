@@ -1,0 +1,43 @@
+
+# Build a imagem
+docker build -t didis/app:1.0
+
+# Rodando o app 
+docker run -e DATABASE_HOST=172.17.0.2 --name app_python -h meu_docker -d -p5000:5000 didis/app:1.0 
+
+#DB Criando o DB
+docker run --name meu_database -e POSTGRES_PASSWORD=12345 -d postgres
+
+# Conectando no DB
+docker run -it --rm  postgres psql -h IPDOINSPECT -U postgres
+
+#Testes no Postegres
+\dt --> lista as tabelas
+\l --> lista os databases
+
+\dt+ --> lista os dados
+
+# install docker compose
+#  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# rodar composer
+
+docker-compose up -d
+docker-compose down
+
+docker-compose ps -- Lista os container criados
+
+docker-compose stop
+
+
+O q é k8s
+
+Componentes / arq
+
+subo nginx 
+
+configuro o app e depois o banco
+
+Busque kubernetes service spec
+
+kubectl get services NAME -o yaml -n teste
